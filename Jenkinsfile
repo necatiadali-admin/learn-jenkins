@@ -6,5 +6,10 @@ pipeline {
                 echo 'React App'
             }
         }
+        stage('npm install'){
+            steps{
+                sh 'npm install'
+            }
+        }
     }
 }
