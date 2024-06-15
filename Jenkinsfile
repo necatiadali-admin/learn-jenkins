@@ -1,15 +1,17 @@
 pipeline {
     agent any
-    stages{
-        stage('Initialize'){
-            steps{
+    stages {
+        stage('Initialize') {
+            steps {
                 echo 'React App'
             }
         }
-        stage('npm install'){
-            steps{
-                sh 'npm install'
+        stage('npm install') {
+            steps {
+                withNPM() {
+                    echo 'Performing npm build...'
+                    sh 'npm install'
+                }
             }
         }
     }
-}
