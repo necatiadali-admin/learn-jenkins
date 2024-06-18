@@ -6,12 +6,12 @@ pipeline {
                 echo 'React App'
             }
         }
-        stage('npm install') {
+        stage('Build') {
             steps {
-                withNPM() {
                     echo 'Performing npm build...'
                     sh 'npm install'
-                }
             }
         }
     }
+}
+
