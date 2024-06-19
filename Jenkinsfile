@@ -14,7 +14,7 @@ pipeline {
                     echo 'Performing npm build...'
                     sh 'npm install'
                     sh 'npm run build'
-                    echo "${BUILD_URL}"
+                    echo "${WORKSPACE}"
             }
         }
     }
