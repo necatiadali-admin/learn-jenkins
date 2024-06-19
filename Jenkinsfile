@@ -4,17 +4,22 @@ pipeline {
         nodejs 'NodeJs'
     }
     stages {
-        stage('Initialize') {
+        stage('Stage') {
             steps {
                 echo 'React App'
+                sh 'npm install'
             }
         }
         stage('Build') {
             steps {
                     echo 'Performing npm build...'
-                    sh 'npm install'
                     sh 'npm run build'
-                    echo "${WORKSPACE}"
+            }
+        }
+         stage('Run') {
+            steps {
+                    echo 'Performing npm run dev...'
+                    sh 'npm run dev'
             }
         }
     }
